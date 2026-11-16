@@ -1,0 +1,24 @@
+
+# Temporary / scratch files
+tmp/
+
+# Dynamic version artifacts (local-only)
+dynamic-version.local.json
+dynamic-version.local.d.ts
+
+# justin-sdk baseline (appended)
+node_modules/
+dist/
+build/
+coverage/
+*.log
+*.tsbuildinfo
+.DS_Store
+*.local
+*.local.json
+*.local.*
+.bv/
+.beads/.br_recovery/
+.beads/.local_version
+.eslintcache
+.claude/worktrees/

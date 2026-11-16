@@ -1,0 +1,34 @@
+# NOTE: .git, node_modules, etc. are ignored by prettier by default
+
+# Build artifacts
+build
+coverage
+**/dist
+
+# Yarn
+.pnp.*
+.yarn/*
+.yarnrc.*
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Temp / scratch
+/tmp
+
+# Claude Code ephemeral bg-job worktrees
+**/.claude/worktrees/
+
+# Beads issue tracker data
+.beads
+
+# CLAUDE.md is managed by Claude Code, not prettier
+**/CLAUDE.md
+
+# The sample script is kept as one exact line
+/src/hello.ts

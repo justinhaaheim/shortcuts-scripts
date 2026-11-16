@@ -1,0 +1,10 @@
+{
+  "components": [
+    "gitignore-setup",
+    "prettier-setup",
+    "tsconfig-setup",
+    "eslint-setup",
+    "husky-setup",
+    "gh-actions-setup"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "shortcuts-scripts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JavaScript and TypeScript scripts that Shortcut Helpers' Run Repo Script action runs in Apple Shortcuts",
+  "scripts": {
+    "doctor": "justin-sdk doctor",
+    "doctor:fix": "justin-sdk doctor --fix",
+    "fix": "justin-sdk fix",
+    "setup-env": "justin-sdk setup-env",
+    "signal": "justin-sdk signal --quiet",
+    "signal:serial": "justin-sdk signal --serial",
+    "signal:verbose": "justin-sdk signal",
+    "signal-source:LINT": "eslint --report-unused-disable-directives --max-warnings 0 .",
+    "signal-source:PRETTIER": "prettier --check .",
+    "signal-source:TS": "tsc --noEmit",
+    "signal-source:TS-SCRIPTS": "bun scripts/check-scripts.ts",
+    "ts-check": "tsc --noEmit && bun run ts-check:scripts",
+    "ts-check:scripts": "bun scripts/check-scripts.ts",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "prettier:write:file": "prettier --write --ignore-unknown",
+    "fix-source:PRETTIER": "prettier --write .",
+    "lint-base": "eslint --report-unused-disable-directives --max-warnings 0",
+    "lint": "bun run lint-base -- .",
+    "lint:fix": "bun run lint-base -- --fix .",
+    "lint:fix:file": "bun run lint-base -- --fix",
+    "fix-source:LINT": "eslint --fix .",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@justinhaaheim/justin-sdk": "github:justinhaaheim/justin-sdk#v0.70.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2",
+    "@types/bun": "latest",
+    "eslint": "9.31.0",
+    "eslint-config-jha-react-node": "github:justinhaaheim/eslint-config-jha-react-node",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7"
+  },
+  "lint-staged": {
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx,js,jsx,cjs,mjs}": [
+      "bun run lint-base -- --fix --no-warn-ignored",
+      "prettier --write"
+    ]
+  }
+}
